@@ -1,0 +1,15 @@
+{
+  "name": "discord-reaction-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node --env-file=.env src/index.js"
+  },
+  "keywords": [],
+  "author": "andreefl",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.15.3"
+  }
+}
