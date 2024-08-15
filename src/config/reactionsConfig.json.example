@@ -1,0 +1,10 @@
+{
+    "anyUser": false, // Reacts to any user
+    "anyUserReaction": "🤖", // Emoji to be used when anyUser is true
+    "whitelist": [
+        {
+            "id": "example",
+            "reaction": "🐍"
+        }
+    ]
+}

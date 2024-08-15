@@ -1,11 +1,18 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const validateReactionsConfig = require('./utils/validateReactionsConfig');
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
 
-// Inicializa cliente
+// Validates the configuration file
+if (!validateReactionsConfig()) {
+	console.error('Invalid configuration file');
+	return;
+}
+
+// Initializes the client
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
 
-// Inicializa comandos
+// Initializes the slash commands
 client.commands = new Collection();
 
 const commandsPath = path.join(__dirname, 'commands');
@@ -43,7 +50,7 @@ client.on(Events.InteractionCreate, async interaction => {
 	}
 });
 
-// Inicializa eventos
+// Initializes the events
 const eventsPath = path.join(__dirname, 'events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
 

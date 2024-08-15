@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node --env-file=.env src/index.js",
-    "deploy-commands": "node --env-file=.env src/deploy-commands.js"
+    "deploy-commands": "node --env-file=.env src/deployCommands.js"
   },
   "keywords": [],
   "author": "andreefl",
